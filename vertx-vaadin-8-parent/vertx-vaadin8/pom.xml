@@ -6,7 +6,7 @@
         <groupId>com.github.mcollovati.vertx</groupId>
         <artifactId>vertx-vaadin-root</artifactId>
         <version>1.0.v8v13</version>
-        <relativePath/>
+        <relativePath>../..</relativePath>
     </parent>
 
     <artifactId>vertx-vaadin8</artifactId>
@@ -233,7 +233,7 @@
                                 </goals>
                                 <configuration>
                                     <file>
-                                        ${build.directory}/${build.finalName}-vaadin-${vaadin.version}.${project.packaging}
+                                        ${project.build.directory}/${project.build.finalName}-vaadin-${vaadin.version}.${project.packaging}
                                     </file>
                                     <url>${bintray.url}</url>
                                     <repositoryId>bintray-mcollovati-maven-repo</repositoryId>
