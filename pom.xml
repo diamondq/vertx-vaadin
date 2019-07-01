@@ -4,7 +4,7 @@
 
     <groupId>com.github.mcollovati.vertx</groupId>
     <artifactId>vertx-vaadin-root</artifactId>
-    <version>1.0.v8v13</version>
+    <version>1.0.v8v13DQ-SNAPSHOT</version>
     <packaging>pom</packaging>
 
 
@@ -42,15 +42,9 @@
     </scm>
 
     <distributionManagement>
-        <repository>
-            <id>bintray-mcollovati-maven-repo</id>
-            <name>mcollovati-maven-repo</name>
-            <url>${bintray.url}</url>
-        </repository>
         <snapshotRepository>
-            <id>bintray-oss-snapshots</id>
-            <name>oss-jfrog-artifactory-snapshots</name>
-            <url>https://oss.jfrog.org/artifactory/oss-snapshot-local</url>
+			<id>1-dq-snapshot</id>
+            <url>https://nexus.diamondq.com/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -64,7 +58,6 @@
         <checkstyle.directory>${maven.multiModuleProjectDirectory}/checkstyle</checkstyle.directory>
         <checkstyle.skip>true</checkstyle.skip>
         <bintray.package>vertx-vaadin</bintray.package>
-        <bintray.url>https://api.bintray.com/maven/mcollovati/maven-repo/${bintray.package}/;publish=1</bintray.url>
 
 
         <jacoco-maven-plugin.version>0.8.1</jacoco-maven-plugin.version>
@@ -80,9 +73,9 @@
         <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
         <maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
 
-        <vertx.version>3.5.4</vertx.version>
+        <vertx.version>3.7.1</vertx.version>
         <vaadin.version>8.5.2</vaadin.version>
-        <vaadin.platform.version>13.0.7</vaadin.platform.version>
+        <vaadin.platform.version>13.0.9</vaadin.platform.version>
         <vaadin.flow.version>1.4.4</vaadin.flow.version>
 
         <javax.servlet.version>3.1.0</javax.servlet.version>
