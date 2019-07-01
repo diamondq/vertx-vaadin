@@ -5,22 +5,29 @@
     <parent>
         <groupId>com.github.mcollovati.vertx</groupId>
         <artifactId>vertx-vaadin-root</artifactId>
-        <version>1.0.v8v13</version>
+        <version>1.0.v8v13DQ-SNAPSHOT</version>
         <relativePath>../..</relativePath>
     </parent>
 
     <artifactId>vertx-vaadin8</artifactId>
     <packaging>jar</packaging>
     <name>vertx-vaadin8</name>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2DQ-SNAPSHOT</version>
     <description>An adapter to run Vaadin 8 applications on Vertx</description>
     <url>https://github.com/mcollovati/vertx-vaadin</url>
 
     <properties>
         <sockjs-client.version>1.1.4</sockjs-client.version>
         <checkstyle.skip>false</checkstyle.skip>
-        <vaadin8-sockjs.version>1.0.0</vaadin8-sockjs.version>
+        <vaadin8-sockjs.version>1.0.v8v13DQ-SNAPSHOT</vaadin8-sockjs.version>
     </properties>
+
+    <distributionManagement>
+        <snapshotRepository>
+			<id>1-dq-snapshot</id>
+            <url>https://nexus.diamondq.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
@@ -235,8 +242,8 @@
                                     <file>
                                         ${project.build.directory}/${project.build.finalName}-vaadin-${vaadin.version}.${project.packaging}
                                     </file>
-                                    <url>${bintray.url}</url>
-                                    <repositoryId>bintray-mcollovati-maven-repo</repositoryId>
+                                    <url>https://nexus.diamondq.com/repository/maven-snapshots/</url>
+                                    <repositoryId>1-dq-snapshot</repositoryId>
                                     <groupId>${project.groupId}</groupId>
                                     <artifactId>${project.artifactId}</artifactId>
                                     <version>${project.version}</version>
