@@ -264,7 +264,7 @@ public class VertxVaadin {
         SockJSHandler sockJSHandler = SockJSHandler.create(vertx, options);
         SockJSPushHandler pushHandler = new SockJSPushHandler(service, sessionHandler, sockJSHandler);
         //vaadinRouter.route("/PUSH/*").handler(pushHandler);
-        Path pushPath = Paths.get(config.getString(Constants.SERVLET_PARAMETER_PUSH_URL, "/"), "*").normalize();
+        String pushPath = Paths.get(config.getString(Constants.SERVLET_PARAMETER_PUSH_URL, "/")).normalize().toString() + "*";
         vaadinRouter.route(pushPath.toString()).handler(rc -> {
             if (ApplicationConstants.REQUEST_TYPE_PUSH.equals(rc.request().getParam(ApplicationConstants.REQUEST_TYPE_PARAMETER))) {
                 pushHandler.handle(rc);
