@@ -1,5 +1,11 @@
 .vertx/
 
+# Eclipse
+.classpath
+.factorypath
+.project
+.settings/
+
 # Created by https://www.gitignore.io/api/maven
 
 ### Maven ###
