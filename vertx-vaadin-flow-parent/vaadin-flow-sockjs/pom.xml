@@ -5,14 +5,14 @@
     <parent>
         <groupId>com.github.mcollovati.vertx</groupId>
         <artifactId>vertx-vaadin-root</artifactId>
-        <version>1.0.v8v13</version>
+        <version>1.0.v8v13DQ-SNAPSHOT</version>
         <relativePath>../..</relativePath>
     </parent>
 
     <artifactId>vaadin-flow-sockjs</artifactId>
     <packaging>jar</packaging>
     <name>vaadin-flow-sockjs</name>
-    <version>13.0.0</version>
+    <version>13.0.0DQ-SNAPSHOT</version>
     <description>Sockjs push connection implementation for Vaadin Flow</description>
     <url>https://github.com/mcollovati/vertx-vaadin</url>
 
@@ -37,6 +37,13 @@
         <maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
         <minify-maven-plugin.version>1.7.6</minify-maven-plugin.version>
     </properties>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>1-dq-snapshot</id>
+            <url>https://nexus.diamondq.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <dependencies>
 
@@ -433,8 +440,8 @@
                                     <file>
                                         ${project.build.directory}/${project.build.finalName}.${project.packaging}
                                     </file>
-                                    <url>${bintray.url}</url>
-                                    <repositoryId>bintray-mcollovati-maven-repo</repositoryId>
+                                    <url>https://nexus.diamondq.com/repository/maven-snapshots/</url>
+                                    <repositoryId>1-dq-snapshot</repositoryId>
                                     <groupId>${project.groupId}</groupId>
                                     <artifactId>${project.artifactId}</artifactId>
                                     <version>${project.version}</version>

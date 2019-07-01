@@ -4,13 +4,13 @@
     <parent>
         <groupId>com.github.mcollovati.vertx</groupId>
         <artifactId>vertx-vaadin-root</artifactId>
-        <version>1.0.v8v13</version>
+        <version>1.0.v8v13DQ-SNAPSHOT</version>
         <relativePath>..</relativePath>
     </parent>
 
     <groupId>com.github.mcollovati.vertx</groupId>
     <artifactId>vertx-vaadin8-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0DQ-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <description>Vertx Vaadin 8 parent</description>
