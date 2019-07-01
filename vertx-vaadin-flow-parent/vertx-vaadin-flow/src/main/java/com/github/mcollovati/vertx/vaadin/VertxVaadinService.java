@@ -50,7 +50,7 @@ import com.vaadin.flow.theme.AbstractTheme;
 import io.vertx.core.Vertx;
 import io.vertx.core.file.FileSystem;
 import io.vertx.core.http.impl.MimeMapping;
-import io.vertx.core.impl.FileResolver;
+import io.vertx.core.file.impl.FileResolver;
 import io.vertx.core.json.JsonObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -245,7 +245,7 @@ public class VertxVaadinService extends VaadinService {
         String relativePath = makePathRelative(path);
         if (fileSystem.existsBlocking(relativePath)) {
             try {
-                return new FileResolver(getVertx())
+                return new FileResolver()
                     .resolveFile(relativePath).toURI().toURL();
             } catch (MalformedURLException e) {
                 e.printStackTrace();

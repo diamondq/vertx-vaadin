@@ -163,17 +163,17 @@ public class VertxVaadinResponseUT {
     @Test
     public void shouldDelegateSetCacheTimeForNoCache() throws Exception {
         vaadinResponse.setCacheTime(-1);
-        verify(httpServerResponse).putHeader(HttpHeaders.CACHE_CONTROL.toString(), "no-cache");
+        verify(httpServerResponse).putHeader("Cache-Control", "no-cache");
         verify(httpServerResponse).putHeader("Pragma", "no-cache");
-        assertDateHeader(HttpHeaders.EXPIRES.toString(), LocalDateTime.of(1970, 1, 1, 0, 0, 0), "Thu, 1 Jan 1970 00:00:00", false);
+        assertDateHeader("Expires", LocalDateTime.of(1970, 1, 1, 0, 0, 0), "Thu, 1 Jan 1970 00:00:00", false);
     }
 
     @Test
     public void shouldDelegateSetCacheTime() throws Exception {
         long millis = 3000;
         vaadinResponse.setCacheTime(millis);
-        verify(httpServerResponse).putHeader(HttpHeaders.CACHE_CONTROL.toString(), "max-age=3");
-        verify(httpServerResponse).putHeader(eq(HttpHeaders.EXPIRES.toString()), anyString());
+        verify(httpServerResponse).putHeader("Cache-Control", "max-age=3");
+        verify(httpServerResponse).putHeader(eq("Expires"), anyString());
         verify(httpServerResponse).putHeader("Pragma", "cache");
     }
 
